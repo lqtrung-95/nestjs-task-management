@@ -36,9 +36,9 @@ export class TasksService {
 
     if (!found) {
       throw new NotFoundException(`Task with id ${id} not found.`);
-    } else {
-      return found;
     }
+
+    return found;
   }
 
   createTask(createTaskDTO: CreateTaskDTO): Task {
