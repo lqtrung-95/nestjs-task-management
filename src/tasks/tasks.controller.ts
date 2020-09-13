@@ -41,12 +41,12 @@ export class TasksController {
     return this.taskService.createTask(createTaskDTO);
   }
 
-  /*
-
   @Delete('/:id')
-  deleteTaskById(@Param('id') id: string): void {
+  deleteTaskById(@Param('id', ParseIntPipe) id: number): Promise<void> {
     return this.taskService.deleteTaskById(id);
   }
+
+  /*
 
   @Patch('/:id/status')
   updateTaskStatus(
